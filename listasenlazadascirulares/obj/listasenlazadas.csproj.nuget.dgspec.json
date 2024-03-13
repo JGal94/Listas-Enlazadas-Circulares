@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juanf\\OneDrive\\listasenlazadas\\listasenlazadas.csproj": {}
+    "C:\\users\\juanf\\documents\\Listas-Enlazadas-Circulares\\listasenlazadas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juanf\\OneDrive\\listasenlazadas\\listasenlazadas.csproj": {
+    "C:\\users\\juanf\\documents\\Listas-Enlazadas-Circulares\\listasenlazadas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juanf\\OneDrive\\listasenlazadas\\listasenlazadas.csproj",
+        "projectUniqueName": "C:\\users\\juanf\\documents\\Listas-Enlazadas-Circulares\\listasenlazadas.csproj",
         "projectName": "listasenlazadas",
-        "projectPath": "C:\\Users\\juanf\\OneDrive\\listasenlazadas\\listasenlazadas.csproj",
+        "projectPath": "C:\\users\\juanf\\documents\\Listas-Enlazadas-Circulares\\listasenlazadas.csproj",
         "packagesPath": "C:\\Users\\juanf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juanf\\OneDrive\\listasenlazadas\\obj\\",
+        "outputPath": "C:\\users\\juanf\\documents\\Listas-Enlazadas-Circulares\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\juanf\\AppData\\Roaming\\NuGet\\NuGet.Config",
