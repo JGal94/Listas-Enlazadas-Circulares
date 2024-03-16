@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("listasenlazadas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed4b65e3f465d26b3d9c297fdfb65091ffe5dabf")]
 [assembly: System.Reflection.AssemblyProductAttribute("listasenlazadas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("listasenlazadas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

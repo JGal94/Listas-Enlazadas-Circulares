@@ -36,12 +36,18 @@ namespace listasenlazadas
                     Ultimo = nuevo; // el ultimo se convierte el nuevo
                     Primero.Siguiente = Ultimo;  // el primero apunta a el ultimo
 
+                    Ultimo.Siguiente = Primero;  // se señala que despues del ultimo sigue el primero
+                    Primero.Anterior = Ultimo;  // se señala que antes del primero esta el ultimo
+
                 }
                 else  // si hay mas de un dato
                 {
                     Ultimo.Siguiente = nuevo;  //ultimo apunta a nuevo
                     nuevo.Anterior = Ultimo;  // nuevo apunta a anterior
                     Ultimo = nuevo;  // nuevo se convierte en ultimo
+
+                    Ultimo.Siguiente = Primero;   // se señala que despues del ultimo sigue el primero
+                    Primero.Anterior = Ultimo;  // se señala que antes del primero esta el ultimo
                 }
                 Console.WriteLine("╔══════════════════════╗");
                 Console.WriteLine($"║ Se insertó: {Ultimo.Dato,-8} ║");  // se muestra el dato ingresado
@@ -75,6 +81,11 @@ namespace listasenlazadas
                 {
                     Console.WriteLine($"║   *** {actual.Dato,-19} ║");  // se muestra el dato actual
                     actual = actual.Siguiente;  // el dato actual se convierte en el siguiente
+
+                    if(actual == Primero)  // if para verificar que solo se muestre una vez la lista
+                    {
+                        break;  // si ya se recorrio la lista rompe el ciclo
+                    }
                 }
             }
             else  // si no hay dato en la lista
@@ -91,6 +102,8 @@ namespace listasenlazadas
             actual = Primero;
             Nodo anterior = new Nodo();  // se crea el nodo anterior para saber cual estaba antes
             anterior = null;
+            Nodo siguiente = new Nodo();  // se crea el nodo siguiente para hacer la union al quitar el nodo
+            siguiente = null;
             bool Encontrado = false;  // variable para llevar el control si se encontro
             Console.WriteLine("\r\n\r\n-------Ingrese el dato del nodo a buscar para eliminar: ");
             try { // try para evitar errores de introduccion de datos
@@ -106,16 +119,21 @@ namespace listasenlazadas
 
                         if (actual == Primero)  // si el dato buscado es el primero
                         {
+                            Ultimo.Siguiente = Primero.Siguiente;  // actualizar el siguiente del ultimo
                             Primero = Primero.Siguiente;  // se elimina
+                            Primero.Anterior = Ultimo;  // se colocar que el anterior al primero es el ultimo
+                               
                         }
                         else if (actual == Ultimo)  // si es el ultimo
                         {
-                            anterior.Siguiente = null; // el anterior apunta a null
+                            anterior.Siguiente = Primero; // el anterior apunta a null
                             Ultimo = anterior;  // se elimina
+                                Primero.Anterior = Ultimo; // actualizar el anterior del primero
                         }
                         else  // si el nodo a eliminar no es ni el primero ni el ultimo
                         {
                             anterior.Siguiente = actual.Siguiente; // se elimina el nodo actual
+                            siguiente.Anterior = actual.Anterior;  // se coloca que el anterior al siguiente es el anterior al actual
 
                         }
                         Console.WriteLine($"╠════════════════════════════════════════════════════════════╣");
@@ -125,6 +143,12 @@ namespace listasenlazadas
                     }
                     anterior = actual;  // se pasa al siguiente nodo
                     actual = actual.Siguiente;  //  se pasa al siguiente nodo
+                    siguiente = actual.Siguiente;  // se pone el sigguiente del actual
+
+                        if (actual == Primero)  // if para verificar que solo se recorra una vez la lista
+                        {
+                            break;
+                        }
                 }
                 if (!Encontrado)  // si no se encontro el nodo
                 {
